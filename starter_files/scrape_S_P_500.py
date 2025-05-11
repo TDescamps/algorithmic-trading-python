@@ -53,7 +53,8 @@ for row in rows:
             price = cols[4].text.strip().split()[-1]  # last part after the image
             change = cols[5].text.strip()
             percent_change = cols[6].text.strip()
-
+            # Append the data to the list
+            data.append([index, company_name, symbol, weight, price, change, percent_change])
 # Create a DataFrame
 columns = ["Index", "Company", "Symbol", "Weight", "Price", "Change", "Percent Change"]
 df = pd.DataFrame(data, columns=columns)
